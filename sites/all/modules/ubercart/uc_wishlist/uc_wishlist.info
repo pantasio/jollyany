@@ -1,0 +1,19 @@
+name = "Wish list/gift registry"
+description = "Allows users to create public shopping or wish lists."
+dependencies[] = uc_store
+dependencies[] = uc_order
+dependencies[] = uc_product
+files[] = uc_wishlist.module
+files[] = uc_wishlist.admin.inc
+files[] = uc_wishlist.pages.inc
+package = "Ubercart - extra"
+core = 7.x
+php = 5.0
+version = "7.x-1.x-dev"
+
+; Information added by Drupal.org packaging script on 2014-03-05
+version = "7.x-1.0-alpha+11-dev"
+core = "7.x"
+project = "uc_wishlist"
+datestamp = "1394000013"
+

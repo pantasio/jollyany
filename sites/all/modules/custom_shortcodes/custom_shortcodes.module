@@ -1,0 +1,67 @@
+<?php
+/**
+ * @file
+ * Sets up a custom filter that enables custom shortcodes.
+ */
+
+/**
+ * Implementation of hook_filter_info()
+ */
+function custom_shortcodes_filter_info() {
+
+  $filters['custom_shortcodes'] = array(
+    'title' => t('Custom Shortcodes'), // (required) An administrative summary of what the filter does.
+    'description' => t('Sets up a custom filter that enables custom shortcodes.'), // Additional administrative information about the filter's behavior, if needed for clarification.
+    'prepare callback' => 'custom_shortcodes_filter_node_embed_prepare', // The name of a function that escapes the content before the actual filtering happens.
+    'process callback' => 'custom_shortcodes_filter_custom_shortcodes_process', // (required) The name the function that performs the actual filtering.
+    'tips callback'  => 'custom_shortcodes_filter_custom_shortcodes_tips', // The name of a function that returns end-user-facing filter usage guidelines for the filter.
+    'cache' => FALSE, // (default TRUE) Specifies whether the filtered text can be cached. Note that setting this to FALSE makes the entire text format not cacheable, which may have an impact on the site's overall performance.
+  );
+
+  return $filters;
+
+} // custom_shortcodes_filter_info
+
+/**
+ * Prepare callback for callback_filter_prepare
+ * See https://api.drupal.org/api/drupal/modules%21filter%21filter.api.php/function/callback_filter_prepare/7
+ */
+function custom_shortcodes_filter_custom_shortcodes_prepare($text, $filter, $format, $langcode, $cache, $cache_id) {
+
+  return $text;
+
+} // custom_shortcodes_filter_node_embed_prepare
+
+/**
+ * Process callback for callback_filter_process
+ * See https://api.drupal.org/api/drupal/modules%21filter%21filter.api.php/function/callback_filter_process/7
+ */
+function custom_shortcodes_filter_custom_shortcodes_process($text, $filter, $format, $langcode, $cache, $cache_id) {
+  
+  // Here's where you'll create the regular expression for your custom shortcode.
+  return preg_replace_callback('/\[style:(.*)\](.*)\[\/style\]/', '_style_make_replacements', $text);
+
+} // custom_shortcodes_filter_custom_shortcodes_process
+
+/**
+ * Tips callback for callback_filter_tips
+ * See https://api.drupal.org/api/drupal/modules%21filter%21filter.api.php/function/callback_filter_tips/7
+ */
+function custom_shortcodes_filter_custom_shortcodes_tips($filter, $format, $long) {
+
+  return t('[style:class_name]Content[/style] - Insert a div with a defined class name.');
+
+} // custom_shortcodes_filter_custom_shortcodes_tips
+
+/**
+ * Provides the replacement HTML to be rendered in place of the [style:class_name]Content[/style] code.
+ */
+function _style_make_replacements($matches) {
+
+  $html = '<div class="' . $matches[1] . '">';
+  $html .= $matches[2];
+  $html .= '</div>';
+
+  return $html;
+
+} // _style_make_replacements

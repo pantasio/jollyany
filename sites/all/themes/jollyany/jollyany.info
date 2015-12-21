@@ -1,0 +1,77 @@
+name = Jollyany Theme
+description = Responsive Drupal 7 Theme by Arrowhitech JSC. 
+core = 7.x
+engine = phptemplate
+version = 1.0
+
+stylesheets[all][] = css/custom.css
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/owl-carousel.css
+stylesheets[all][] = css/flexslider.css
+stylesheets[all][] = css/animate.min.css
+stylesheets[all][] = css/prettyPhoto.css
+stylesheets[all][] = royalslider/royalslider.css
+stylesheets[all][] = royalslider/skins/universal/rs-universal.css
+stylesheets[all][] = royalslider/skins/default-inverted/rs-default-inverted.css
+stylesheets[all][] = rs-plugin/css/settings.css
+stylesheets[all][] = switcher/css/switcher.css
+
+regions[help] = Help
+regions[top_bar] = Top Bar
+regions[header_left] = Header Left
+regions[header_right] = Header Right
+regions[menu] = Menu
+regions[social_top] = Social Top
+regions[search] = Search
+
+regions[before_content_no_wrap] = Before Content No Wrap
+regions[before_content] = Before Content
+regions[content] = Content
+regions[after_content] = After Content
+regions[after_content_no_wrap] = After Content No Wrap
+regions[sidebar_node] = Sidebar Node
+
+regions[sidebar_left] = Left Sidebar
+regions[sidebar_right] = Right Sidebar
+
+regions[footer_parallax] = Footer Parallax
+regions[footer_1] = Footer Box 1
+regions[footer_2] = Footer Box 2
+regions[footer_3] = Footer Box 3
+regions[footer_4] = Footer Box 4
+
+regions[footer_bottom] = Footer Bottom
+
+; Define theme setting defaults.
+settings[breadcrumbs] = '1'
+settings[switcher] = '1'
+
+settings[header_1] = header-style-1
+settings[header_2] = header-style-2
+settings[header_3] = header-style-3
+
+settings[footer_1] = footer-style-1
+settings[footer_2] = footer-style-2
+settings[footer_3] = footer-style-3
+
+settings[page_style1] = home-version-7, shop3
+settings[page_style2] = home-version-8
+settings[page_onepage] = home-onepage
+settings[page_only_content] = 404, maintenance-style-1, maintenance-style-2
+settings[project_text_button] = View project
+settings[projects_layout] = 4_columns
+settings[blog_layout] = sidebar_right
+
+settings[contactmap_title] = OUR USA OFFICE
+settings[contactmap_website] = #
+settings[contactmap_address] = NEW YORK CITY 2045 / 65
+settings[contactmap_phone] = +90 555 666 77 88
+settings[contactmap_lat] = -37.801578
+settings[contactmap_long] = 145.060508
+
+settings[layout_option] = fullwidth
+settings[header_option] = header_default
+settings[footer_option] = footer_default
+settings[color_scheme] = yellow
+settings[background_style] = light

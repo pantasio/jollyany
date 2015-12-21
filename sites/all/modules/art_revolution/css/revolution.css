@@ -1,0 +1,14 @@
+.tp-banner-container {
+  width:100%;
+  position:relative;
+  padding:0;
+}
+
+.tp-banner{
+  width:100%;
+  position:relative;
+}
+
+@media (max-width: 450px) {
+ #art-revolution {height: 200px !important;}
+}
